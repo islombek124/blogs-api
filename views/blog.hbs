@@ -1,0 +1,31 @@
+<div class="container mb-3">
+  {{>navbar}}
+  {{#if blogError}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> {{blogError}}
+  </div>
+  {{/if}}
+  <form action="/blog" method="post">
+    <div class="mb-3">
+      <label for="image" class="form-label fw-semibold">Enter a image (not required)</label>
+      <input class="form-control" name="image" type="file" accept=".jpg .png .svg .jpeg .jfif .pjpeg .pjp">
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label fw-semibold">Enter a title (required)</label>
+      <input class="form-control" name="title">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label fw-semibold">Enter a description (required)</label>
+      <input class="form-control" name="description">
+    </div>
+    <div class="mb-3">
+      <label for="fullDescription" class="form-label fw-semibold">Enter a full description (required)</label>
+      <textarea class="form-control" name="fullDescription" cols="30" rows="10" style="resize: vertical;"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label fw-semibold">Enter an author name (required)</label>
+      <input class="form-control" name="author">
+    </div>
+    <button class="btn btn-primary" type="submit">Save a blog</button>
+  </form>
+</div>

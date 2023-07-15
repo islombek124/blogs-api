@@ -1,0 +1,58 @@
+<div class="m-3">
+  <a href="/" class="btn btn-secondary">&leftarrow; Back to home</a>
+</div>
+
+<main
+  class="container vh-100 m-auto d-flex align-items-center justify-content-center"
+>
+  <form action="/signup" method="post" class="w-100">
+    <h1 class="h3 mb-3 fw-normal">Sign up</h1>
+    {{#if signupError}}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong>
+        {{signupError}}
+      </div>
+    {{/if}}
+    <div class="form-floating">
+      <input
+        class="form-control"
+        name="firstName"
+        id="floatingInput"
+        placeholder="Name"
+      />
+      <label for="floatingInput">First name</label>
+    </div>
+    <div class="form-floating">
+      <input
+        class="form-control"
+        name="lastName"
+        id="floatingInput"
+        placeholder="Name"
+      />
+      <label for="floatingInput">Last name</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="floatingPassword"
+        placeholder="Email"
+      />
+      <label for="floatingPassword">Email</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="btn btn-primary w-100 py-2 my-3" type="submit">Sign up</button>
+    <p class="text-center">Already have an account?
+      <a href="/login">Login</a></p>
+  </form>
+</main>

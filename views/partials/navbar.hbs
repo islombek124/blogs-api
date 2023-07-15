@@ -1,0 +1,40 @@
+<nav
+  class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom gap-3"
+>
+  <a
+    href="/"
+    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+  >
+    <span class="fs-4">Blogs API UI</span>
+  </a>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/blogs" class="nav-link text-success">View all
+        blogs</a></li>
+    {{#if isUserAdmin}}
+      {{#if isBlog}}
+        <li class="nav-item"><a href="/blog" class="nav-link active">Save a blog</a></li>
+      {{else}}
+        <li class="nav-item"><a href="/blog" class="nav-link">Save a blog</a></li>
+      {{/if}}
+
+      {{#if isDeleteBlog}}
+        <li class="nav-item"><a
+            href="/delete-blog"
+            class="nav-link bg-danger active"
+          >Delete a blog</a></li>
+      {{else}}
+        <li class="nav-item"><a href="/delete-blog" class="nav-link">Delete a
+            blog</a></li>
+      {{/if}}
+    {{/if}}
+  </ul>
+  <div class="btn-group">
+    {{#if token}}
+      <a class="btn btn-danger" href="/logout">Log out</a>
+    {{else}}
+      <a class="btn btn-success" href="/login">Sign In</a>
+      <a class="btn btn-primary" href="/signup">Sign Up</a>
+    {{/if}}
+  </div>
+</nav>

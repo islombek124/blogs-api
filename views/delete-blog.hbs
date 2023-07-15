@@ -1,0 +1,15 @@
+<div class="container mb-3">
+  {{>navbar}}
+  <form action="/delete-blog" method="post">
+  {{#if deleteError}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> {{deleteError}}
+  </div>
+  {{/if}}
+    <div class="mb-3">
+      <label for="id" class="form-label fw-semibold">Enter a ID for delete (required)</label>
+      <input class="form-control" name="id">
+    </div>
+    <button class="btn btn-danger" type="submit">Delete a blog</button>
+  </form>
+</div>
