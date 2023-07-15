@@ -43,7 +43,9 @@ app.get("/", async (req, res) => {
 // connect mongoose
 const mongoose = require("mongoose");
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(
+    "mongodb+srv://islom:RDUDJCbcW8MFwRKQ@defaultdb.ljnncq5.mongodb.net/blogs-api"
+  )
   .then(() => {
     console.log("connected to mongoose");
   })
