@@ -13,9 +13,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  session({ secret: "SECRET_SESSION", resave: false, saveUninitialized: false })
-);
+app.use(session({ secret: "SECRET_SESSION", saveUninitialized: false }));
 app.use(flash());
 app.use(varMiddleware);
 
@@ -43,9 +41,10 @@ app.get("/", async (req, res) => {
 // connect mongoose
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://islom:RDUDJCbcW8MFwRKQ@defaultdb.ljnncq5.mongodb.net/blogs-api"
-  )
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("connected to mongoose");
   })
